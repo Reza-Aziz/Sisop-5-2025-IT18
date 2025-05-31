@@ -1,11 +1,11 @@
-#ifndef __SHELL_H__
-#define __SHELL_H__
+#ifndef SHELL_H
+#define SHELL_H
 
 #include "std_type.h"
 
 void shell();
 void parseCommand(char *buf, char *cmd, char arg[2][64]);
 
-// Tambahkan fungsi bila perlu
+bool processCommand(char *cmd, char arg[2][64]);
 
-#endif // __SHELL_H__
+#endif
