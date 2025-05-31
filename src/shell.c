@@ -2,6 +2,8 @@
 #include "kernel.h"
 #include "std_lib.h"
 
+char currentUsername[32] = "user";
+
 void shell(){
   char buf[128];
   char cmd[64];
@@ -9,6 +11,7 @@ void shell(){
   
   printString("Welcome to EorzeOS!\n");
   while (true) {
+    printString(currentUsername);
     printString("> ");
     readString(buf);
     
@@ -53,6 +56,19 @@ void parseCommand(char *buf, char *cmd, char arg[2][64]) {
 }
 
 bool processCommand(char *cmd, char arg[2][64]) {
+  if (strcmp(cmd, "user") == 0) {
+    if (arg[0][0] == '\0') {
+      strcpy(currentUsername, "user");
+      printString("Username changed to user\n");
+    } else {
+      strcpy(currentUsername, arg[0]);
+      printString("Username changed to ");
+      printString(arg[0]);
+      printString("\n");
+    }
+    return true;
+  }
+  
   if (strcmp(cmd, "yo") == 0) {
     printString("gurt\n");
     return true;
