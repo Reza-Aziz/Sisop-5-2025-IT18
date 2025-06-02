@@ -4,8 +4,9 @@
 
 Nama | NRP
 --- | ---
-Amoes Noland | 5027231028
-Rafi' Afnaan Fathurrahman | 5027231040
+Muhammad Fachry Shalahuddin Rusamsi | 5027241031
+Reza Aziz Simatupang | 5027241051
+Muhammad Farrel Shaputra | 5027241110
 
 ## Daftar Isi
 
