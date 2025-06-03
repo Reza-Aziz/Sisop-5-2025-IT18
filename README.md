@@ -268,6 +268,7 @@ if (strcmp(cmd, "gurt") == 0) {
 * Menghapus judul Grand Company
 * Menyediakan pesan konfirmasi
 
+5. Kalkulator sederhana melalui command
 <pre>
   if (strcmp(cmd, "add") == 0) {
     int x = atoi(arg[0]);
