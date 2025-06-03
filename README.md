@@ -253,7 +253,7 @@ if (strcmp(cmd, "gurt") == 0) {
 * Menghapus layar sebelum menerapkan perubahan
 * Menampilkan kesalahan untuk nama faksi yang tidak valid
 
-  <pre>
+<pre>
     if (strcmp(cmd, "clear") == 0) {
     clearScreen();
     setColor(0x07); // default white
@@ -261,7 +261,7 @@ if (strcmp(cmd, "gurt") == 0) {
     printString("Grand Company cleared\n");
     return true;
 }
-  </pre>
+</pre>
 * Mengatur ulang terminal ke status default:
 * Membersihkan layar
 * Mengatur kembali warna ke putih (0x07)
