@@ -81,3 +81,84 @@ bool processCommand(char *cmd, char arg[2][64]) {
   
   return false;
 }
+
+if (strcmp(cmd, "grandcompany") == 0) {
+    if (strcmp(arg[0], "maelstrom") == 0) {
+      clearScreen();
+      setColor(0x04); // merah
+      strcpy(grandCompanyTitle, "@Storm");
+      printString("Grand Company set to Maelstrom\n");
+    } else if (strcmp(arg[0], "twinadder") == 0) {
+      clearScreen();
+      setColor(0x0E); // kuning
+      strcpy(grandCompanyTitle, "@Serpent");
+      printString("Grand Company set to Twin Adder\n");
+    } else if (strcmp(arg[0], "immortalflames") == 0) {
+      clearScreen();
+      setColor(0x01); // biru
+      strcpy(grandCompanyTitle, "@Flame");
+      printString("Grand Company set to Immortal Flames\n");
+    } else {
+      printString("Error: Invalid Grand Company\n");
+    }
+    return true;
+}
+
+if (strcmp(cmd, "clear") == 0) {
+    clearScreen();
+    setColor(0x07); // warna default putih
+    strcpy(grandCompanyTitle, "");
+    printString("Grand Company cleared\n");
+    return true;
+  }
+
+if (strcmp(cmd, "add") == 0) {
+    int x = atoi(arg[0]);
+    int y = atoi(arg[1]);
+    int res = x + y;
+    char resStr[16];
+    itoa(res, resStr);
+    printString(resStr);
+    printString("\n");
+    return true;
+  }
+
+  if (strcmp(cmd, "sub") == 0) {
+    int x = atoi(arg[0]);
+    int y = atoi(arg[1]);
+    int res = x - y;
+    char resStr[16];
+    itoa(res, resStr);
+    printString(resStr);
+    printString("\n");
+    return true;
+  }
+
+  if (strcmp(cmd, "mul") == 0) {
+    int x = atoi(arg[0]);
+    int y = atoi(arg[1]);
+    int res = x * y;
+    char resStr[16];
+    itoa(res, resStr);
+    printString(resStr);
+    printString("\n");
+    return true;
+  }
+
+  if (strcmp(cmd, "div") == 0) {
+    int x = atoi(arg[0]);
+    int y = atoi(arg[1]);
+    if (y == 0) {
+      printString("Error: Division by zero\n");
+    } else {
+      int res = x / y;
+      char resStr[16];
+      itoa(res, resStr);
+      printString(resStr);
+      printString("\n");
+    }
+    return true;
+  }
+
+  return false;
+}
