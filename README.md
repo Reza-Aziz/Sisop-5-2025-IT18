@@ -1,4 +1,4 @@
-# Sisop-5-2025-IT-Template
+# Sisop-5-2025-IT-18
 
 ## Kelompok
 
@@ -181,3 +181,42 @@ https://github.com/user-attachments/assets/1cfa66b1-b2f5-4e3e-a4b2-ec8b012f6fbb
 ## Laporan
 
 > Isi sesuai pengerjaan.
+1. Mengimplementasikan sistem "The Echo" yang memungkinkan shell untuk mengulang input user jika input bukan command yang valid.
+<pre>
+  if (processCommand(cmd, arg)) {
+  continue;
+} else {
+  printString(buf);
+  printString("\n");
+}
+</pre>
+2. Implementasikan swap system antara command "yo" dan "gurt".
+<pre>
+  if (strcmp(cmd, "yo") == 0) {
+  printString("gurt\n");
+  return true;
+}
+
+if (strcmp(cmd, "gurt") == 0) {
+  printString("yo\n");
+  return true;
+}
+</pre>
+3. Sistem manajemen username yang memungkinkan user mengubah nama user pada shell prompt.
+<pre>
+     char currentUsername[32] = "user";
+</pre>
+<pre>
+     if (strcmp(cmd, "user") == 0) {
+  if (arg[0][0] == '\0') {
+    strcpy(currentUsername, "user");
+    printString("Username changed to user\n");
+  } else {
+    strcpy(currentUsername, arg[0]);
+    printString("Username changed to ");
+    printString(arg[0]);
+    printString("\n");
+  }
+  return true;
+}
+</pre>
