@@ -220,3 +220,67 @@ if (strcmp(cmd, "gurt") == 0) {
   return true;
 }
 </pre>
+
+4. Tiga negara besar Eorzean Alliance membutuhkan bantuan Anda! Pilih salah satu Grand Company untuk mengubah tampilan terminal.
+<pre>
+  if (strcmp(cmd, "grandcompany") == 0) {
+    if (strcmp(arg[0], "maelstrom") == 0) {
+      clearScreen();
+      setColor(0x04); // red
+      strcpy(grandCompanyTitle, "@Storm");
+      printString("Grand Company set to Maelstrom\n");
+    } else if (strcmp(arg[0], "twinadder") == 0) {
+      clearScreen();
+      setColor(0x0E); // yellow
+      strcpy(grandCompanyTitle, "@Serpent");
+      printString("Grand Company set to Twin Adder\n");
+    } else if (strcmp(arg[0], "immortalflames") == 0) {
+      clearScreen();
+      setColor(0x01); // blue
+      strcpy(grandCompanyTitle, "@Flame");
+      printString("Grand Company set to Immortal Flames\n");
+    } else {
+      printString("Error: Invalid Grand Company\n");
+    }
+    return true;
+}
+</pre>
+* Mengubah warna terminal dan judul pengguna berdasarkan faksi yang dipilih
+* Tiga opsi yang valid:
+* maelstrom: Warna merah, judul "@Storm"
+* twinadder: Warna kuning, judul "@Serpent"
+* immortalflames: Warna biru, judul "@Flame"
+* Menghapus layar sebelum menerapkan perubahan
+* Menampilkan kesalahan untuk nama faksi yang tidak valid
+
+  <pre>
+    if (strcmp(cmd, "clear") == 0) {
+    clearScreen();
+    setColor(0x07); // default white
+    strcpy(grandCompanyTitle, "");
+    printString("Grand Company cleared\n");
+    return true;
+}
+  </pre>
+* Mengatur ulang terminal ke status default:
+* Membersihkan layar
+* Mengatur kembali warna ke putih (0x07)
+* Menghapus judul Grand Company
+* Menyediakan pesan konfirmasi
+
+<pre>
+  if (strcmp(cmd, "add") == 0) {
+    int x = atoi(arg[0]);
+    int y = atoi(arg[1]);
+    int res = x + y;
+    char resStr[16];
+    itoa(res, resStr);
+    printString(resStr);
+    printString("\n");
+    return true;
+}
+</pre>
+* Semua mengikuti pola yang sama dengan aritmatika yang berbeda:
+* sub: Pengurangan
+* mul: Perkalian
+* div: Pembagian (dengan pemeriksaan pembagian nol)
