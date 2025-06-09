@@ -290,7 +290,7 @@ if (strcmp(cmd, "gurt") == 0) {
    
    gurt: random (yo, ts unami gng </3, sygau)
    
-   <pre>
+   ``c
     if (strcmp(cmd, "yogurt") == 0) {
         int tick = getBiosTick();
         const char* replies[] = {"yo", "ts unami gng </3", "sygau"};
@@ -300,6 +300,5 @@ if (strcmp(cmd, "gurt") == 0) {
         printString("\n");
         return true;
     }
-   </pre>
 * Mengecek apakah perintah yang diketik user (cmd) adalah "yogurt"
 * Mengambil sisa hasil bagi tick dengan 3, sehingga index-nya akan selalu 0, 1, atau 2 untuk memilih salah satu balasan dari array replies secara random
