@@ -287,6 +287,7 @@ if (strcmp(cmd, "gurt") == 0) {
 * div: Pembagian (dengan pemeriksaan pembagian nol)
 
 6. me:yogurt
+   
    gurt: random (yo, ts unami gng </3, sygau)
    
    <pre>
