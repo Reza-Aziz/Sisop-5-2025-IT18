@@ -290,7 +290,7 @@ if (strcmp(cmd, "gurt") == 0) {
    
    gurt: random (yo, ts unami gng </3, sygau)
    
-   ``c
+   ```c
     if (strcmp(cmd, "yogurt") == 0) {
         int tick = getBiosTick();
         const char* replies[] = {"yo", "ts unami gng </3", "sygau"};
