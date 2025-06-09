@@ -3,6 +3,8 @@
 #include "std_lib.h"
 
 char currentUsername[32] = "user";
+char grandCompanyTitle[32] = "";
+int currentColor = 0x07;
 
 void shell(){
   char buf[128];
@@ -161,4 +163,27 @@ if (strcmp(cmd, "add") == 0) {
   }
 
   return false;
+}
+
+if (strcmp(cmd, "yogurt") == 0) {
+        int tick = getBiosTick();
+        const char* replies[] = {"yo", "ts unami gng </3", "sygau"};
+        int index = tick % 3;
+        printString("gurt> ");
+        printString(replies[index]);
+        printString("\n");
+        return true;
+    }
+
+    if (strcmp(cmd, "yo") == 0) {
+        printString("gurt\n");
+        return true;
+    }
+
+    if (strcmp(cmd, "gurt") == 0) {
+        printString("yo\n");
+        return true;
+    }
+
+    return false;
 }
